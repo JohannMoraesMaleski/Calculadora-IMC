@@ -1,0 +1,6 @@
+# Calculadora de IMC - Dependências
+# Este projeto usa apenas bibliotecas padrão do Python
+# Não são necessárias dependências externas
+
+# Python >= 3.6 (recomendado Python 3.8+)
+
