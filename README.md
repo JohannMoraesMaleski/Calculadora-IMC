@@ -16,24 +16,44 @@ Este projeto implementa uma calculadora de IMC (Índice de Massa Corporal) em Py
 - ✅ Dicas de saúde personalizadas
 - ✅ Interface amigável com emojis
 - ✅ Opção para múltiplos cálculos
+- ✅ Interface web com Flask
 
 ## Como usar
 
 ### Requisitos
 - Python 3.x instalado no sistema
 
-### Execução
+### Execução via linha de comando (terminal)
 
-1. **Via linha de comando:**
+1. Acesse a pasta do projeto:
+   ```bash
+   cd "Caminho/para/Calculador IMC"
+   ```
+2. Execute o script no terminal:
    ```bash
    python calculadora_imc.py
    ```
 
-2. **Via Google Cloud Shell:**
-   - Faça upload do arquivo `calculadora_imc.py`
-   - Execute: `python3 calculadora_imc.py`
+### Execução da interface web
 
-### Exemplo de uso
+1. Abra o terminal na pasta do projeto.
+2. Crie e ative o ambiente virtual (caso ainda não exista):
+   ```powershell
+   python -m venv .venv
+   .\.venv\Scripts\Activate
+   ```
+3. Instale as dependências:
+   ```powershell
+   pip install flask
+   ```
+4. Execute o aplicativo web:
+   ```powershell
+   .\.venv\Scripts\python.exe app.py
+   ```
+5. Abra o navegador e acesse:
+   - http://127.0.0.1:5000
+
+### Exemplo de uso (linha de comando)
 
 ```
 ==================================================
@@ -54,14 +74,14 @@ Classificação do IMC:
 
 ## Classificação do IMC
 
-| Faixa de IMC | Classificação |
-|--------------|---------------|
-| Abaixo de 18,5 | Abaixo do peso |
-| 18,5 a 24,9 | Peso normal |
-| 25,0 a 29,9 | Sobrepeso |
-| 30,0 a 34,9 | Obesidade grau I |
-| 35,0 a 39,9 | Obesidade grau II |
-| 40,0 ou mais | Obesidade grau III |
+| Faixa de IMC      | Classificação              |
+|-------------------|---------------------------|
+| Abaixo de 18,5    | Abaixo do peso            |
+| 18,5 a 24,9       | Peso normal               |
+| 25,0 a 29,9       | Sobrepeso                 |
+| 30,0 a 34,9       | Obesidade grau I          |
+| 35,0 a 39,9       | Obesidade grau II         |
+| 40,0 ou mais      | Obesidade grau III        |
 
 ## Estrutura do Código
 
@@ -91,6 +111,7 @@ Além dos requisitos básicos, foram implementadas:
 - Opção para múltiplos cálculos
 - Validações robustas de entrada
 - Documentação completa
+- Interface web com Flask para uso no navegador
 
 ## Licença
 

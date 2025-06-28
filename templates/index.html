@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IMC</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
+        .container { max-width: 400px; margin: 40px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #0001; padding: 32px; }
+        h1 { text-align: center; color: #333; }
+        form { display: flex; flex-direction: column; gap: 16px; }
+        input[type="number"] { padding: 8px; border-radius: 4px; border: 1px solid #ccc; }
+        button { padding: 10px; background: #007bff; color: #fff; border: none; border-radius: 4px; font-size: 16px; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        .resultado { margin-top: 24px; padding: 16px; background: #e9ffe9; border-radius: 6px; text-align: center; }
+        .erro { margin-top: 24px; padding: 16px; background: #ffe9e9; border-radius: 6px; text-align: center; color: #b00; }
+        .tabela { margin-top: 24px; font-size: 14px; }
+        .tabela span { display: inline-block; width: 32px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de IMC</h1>
+        <form method="post">
+            <label>Peso (kg): <input type="number" name="peso" step="0.01" min="0" required></label>
+            <label>Altura (m): <input type="number" name="altura" step="0.01" min="0" required></label>
+            <button type="submit">Calcular</button>
+        </form>
+        {% if resultado %}
+        <div class="resultado">
+            <h2>Resultado</h2>
+            <p>Peso: {{ resultado.peso }} kg</p>
+            <p>Altura: {{ resultado.altura }} m</p>
+            <p>IMC: <strong>{{ resultado.imc }}</strong></p>
+            <p>Classificação: {{ resultado.cor }} <strong>{{ resultado.classificacao }}</strong></p>
+        </div>
+        {% endif %}
+        {% if erro %}
+        <div class="erro">{{ erro }}</div>
+        {% endif %}
+        <div class="tabela">
+            <h3>Tabela de Classificação do IMC</h3>
+            <p><span>🔵</span> Abaixo de 18,5 - Abaixo do peso</p>
+            <p><span>🟢</span> 18,5 a 24,9 - Peso normal</p>
+            <p><span>🟡</span> 25,0 a 29,9 - Sobrepeso</p>
+            <p><span>🟠</span> 30,0 a 34,9 - Obesidade grau I</p>
+            <p><span>🔴</span> 35,0 a 39,9 - Obesidade grau II</p>
+            <p><span>🔴</span> 40,0 ou mais - Obesidade grau III</p>
+        </div>
+    </div>
+</body>
+</html>
